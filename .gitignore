@@ -1,0 +1,4 @@
+template_agenda
+venv
+.vscode
+__pycache__
