@@ -24,6 +24,8 @@
                         <div class="col-12">
                             <input type="search" value="{{ request.GET.termo }}" class="form-control" id="search-input"
                                 placeholder="Digite sua Pesquisa" name="termo">
+
+                            {%include 'partial/_messages.html'%}
                         </div>
                     </div>
                 </form>
