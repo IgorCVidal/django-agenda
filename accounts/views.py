@@ -11,14 +11,15 @@ from django.contrib.auth.decorators import login_required
 def login(request):
     if request.method != "POST":
         return render(request, "accounts/login.html")
+    
     usuario = request.POST.get("usuario")
     senha = request.POST.get("senha")
     user = auth.authenticate(request, username=usuario, password=senha)
-
     if not user:
         messages.error(request, "Usuário ou senha inválidos")
         return render(request, "accounts/login.html")
     else:
+        print(vars(user))
         auth.login(request, user)
         messages.success(request, "Logado com sucesso.")
         return redirect("dashboard")
